@@ -1,0 +1,48 @@
+.about_title {
+    font-size: 40px;
+  }
+  
+  .about_name {
+    font-family: "Dancing Script", cursive;
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .aboutSite_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .aboutSite_card {
+    display: flex;
+    max-width: 800px;
+    margin: 10px 10px 20px 10px;
+    box-shadow: 0 0 6px whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+  }
+  
+  .aboutSite_card:hover {
+    box-shadow: 0 0 10px blue;
+  }
+  
+  
+  .aboutSite_card__content {
+    padding: 25px 15px 15px 15px;
+    text-align: justify;
+    font-family: "Bodoni Moda", serif;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .aboutme_card {
+      flex-direction: column;
+    }
+  
+  
+    .aboutme_card__content {
+      text-align: center;
+    }
+  }

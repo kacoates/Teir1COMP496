@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header/Header.js';
+import SearchBar from './components/Search/Search.js';
+import SearchButton from './components/SearchButton/SearchButton.js';
+import TableList from './components/FaveList/TableList.js';
+import SiteIntro from './components/SiteIntro/SiteIntro.js';
 import './App.css';
 
-function App() {
+
+
+
+const App = ()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='App'>
+      <div className='Banner'>
+        <Header/>
+      </div>
+      <div>
+        <SearchBar/>
+      </div>
+      <div>
+        <SearchButton/>
+      </div>
+      <div>
+        <TableList/>
+      </div>
+      <div>
+        <SiteIntro/>
+      </div>
     </div>
+
+      
   );
 }
 
