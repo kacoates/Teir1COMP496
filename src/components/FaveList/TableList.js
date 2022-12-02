@@ -8,7 +8,7 @@ function TableList() {
 
   // Update constantly
   useEffect(() => {
-  const interval = setInterval(() => setTime(Date.now()), 1000);
+  const interval = setInterval(() => setTime(Date.now()), 100);
   return () => {
     clearInterval(interval);
   };

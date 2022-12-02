@@ -3,7 +3,7 @@
   }
   
   .about_name {
-    font-family: "Dancing Script", cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 36px;
     text-align: center;
   }
@@ -25,14 +25,14 @@
   }
   
   .aboutSite_card:hover {
-    box-shadow: 0 0 10px blue;
+    box-shadow: 0 0 10px #004684;
   }
   
   
   .aboutSite_card__content {
     padding: 25px 15px 15px 15px;
     text-align: justify;
-    font-family: "Bodoni Moda", serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
   
   

@@ -47,7 +47,7 @@ import "./Search.css";
           // If the movie isn't already in the fav list...
           if (!FaveArray.fav_movies.includes(e.target.id)) {
             FaveArray._fav_movies.push(e.target.id);
-            alert("Added "+ title + " to favorites");
+            //alert("Added "+ title + " to favorites");
         }
           else
             alert(title + " is already in favorites.");
