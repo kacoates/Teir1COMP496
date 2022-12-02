@@ -40,6 +40,7 @@
     overflow: hidden;
     overflow-y: auto;
     justify-content: center;
+    cursor: pointer;
   }
   
   .dataResult::-webkit-scrollbar {

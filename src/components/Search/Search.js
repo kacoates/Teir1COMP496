@@ -1,3 +1,4 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useState } from 'react';
 import FaveArray from '../FaveArray/FaveArray';
 import "./Search.css";
@@ -36,16 +37,22 @@ import "./Search.css";
           }
         };
 
+        const clearSearch = () => {
+          // Make input empty and change state.
+          setInput("");
+          setMatchingMovies([]);
+        }
 
         const updateFavorites = (e, title) => {
           // If the movie isn't already in the fav list...
           if (!FaveArray.fav_movies.includes(e.target.id)) {
             FaveArray._fav_movies.push(e.target.id);
             alert("Added "+ title + " to favorites");
-          }
+        }
           else
             alert(title + " is already in favorites.");
           console.log(FaveArray);
+          clearSearch();
         };
         
         return (
