@@ -5,10 +5,22 @@ from scipy.sparse.linalg import svds
 from scipy.spatial.distance import cdist
 from scipy.spatial.distance import squareform
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
+import json
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 NUMBER_OF_RECS = 10
 
@@ -113,10 +125,10 @@ def get_preds(given_userId, list_of_movies, num_recs):
 class FavoriteMovies(BaseModel):
     fav_movies: List[int]
 
-@app.get('/movies')
+@app.get('/movies.json')
 def get_all_movies():
     return_movies = movies[movies['movieId'].isin(predictions.columns)].drop(columns=['genres'])
-    return return_movies.to_json(orient='records')
+    return json.loads(return_movies.to_json(orient='records'))
 
 @app.post('/recs')
 def movie_recs(favorite_movies: FavoriteMovies):
@@ -124,4 +136,4 @@ def movie_recs(favorite_movies: FavoriteMovies):
     recs = get_preds(userId, favorite_movies.fav_movies, 10)
     movie_pred = recs.index.values.tolist()
     result = get_movie_titles(movie_pred)
-    return result.to_json(orient = 'records')
+    return json.loads(result.to_json(orient = 'records'))

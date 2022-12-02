@@ -1,6 +1,7 @@
 .App {
-  background-color: #d7af0e;
-  padding-top: 5px;
-  padding-bottom: 1510px;
+  background-color: #fafafa;
+  padding: .01px;
+  height: auto;
+  min-height: 100%;
 }
 

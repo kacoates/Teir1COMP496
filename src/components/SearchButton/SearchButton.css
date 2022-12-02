@@ -14,5 +14,12 @@
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 4px;
+    box-shadow: 40px;
     font-size: 14px;
+    box-shadow: 0 0 2px grey;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px #980a00;
 }
