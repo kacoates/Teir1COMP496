@@ -9,12 +9,18 @@ import "./Search.css";
 //    </div>
     //)
     
-    function SearchBar({ placeholder, data }) {
+    function SearchBar({ data }) {
 
         // State setup
         const [matchingMovies, setMatchingMovies] = useState([]);
         const [input, setInput] = useState("");
       
+        const clearSearch = () => {
+          // Make input empty and change state.
+          setInput("");
+          setMatchingMovies([]);
+        }
+        
         const filterSearch = (e) => {
           // Get value from input
           const userInput = e.target.value;
@@ -37,11 +43,7 @@ import "./Search.css";
           }
         };
 
-        const clearSearch = () => {
-          // Make input empty and change state.
-          setInput("");
-          setMatchingMovies([]);
-        }
+        
 
         const updateFavorites = (e, title) => {
           // If the movie isn't already in the fav list...
@@ -57,19 +59,19 @@ import "./Search.css";
         
         return (
               <div className="search"> 
-                <div className="searchInputs"> 
+                <div className="searchItems"> 
                   <input
-                    type="text"
-                    placeholder={placeholder}
+                    placeholder="Enter a Movie Name..."
                     value={input}
                     onChange={filterSearch}
+                    type="text"
                   />
                 </div>
             {matchingMovies.length != 0 && (
-              <div className="dataResult">
-                {matchingMovies.slice(0, 10).map((value, index) => {
+              <div className="suggestionBox">
+                {matchingMovies.slice(0, 10).map((value, x) => {
                   return (
-                    <a className='dataItem' target="_blank" id = {value.movieId} onClick = {e => updateFavorites(e, value.title)} >
+                    <a className='movieEntry' id = {value.movieId} onClick = {e => updateFavorites(e, value.title)} >
                       {value.title}
                     </a>                    
                   );

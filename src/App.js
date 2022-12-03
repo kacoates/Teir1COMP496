@@ -18,7 +18,7 @@ const App = ()=> {
       <div className='Banner'>
         <Header/>
       </div>
-        <SearchBar placeholder="Enter a Movie Name..." data={MovieList}/>
+        <SearchBar data={MovieList}/>
         <SearchButton/>
         <TableList/>
         <SiteIntro/>
