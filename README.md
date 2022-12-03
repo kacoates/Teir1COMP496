@@ -36,7 +36,7 @@ C:\...\Tier1COMP496\backend
 
 Run the following command:
 ```bash
-uvicorn main:app --reload
+python -m uvicorn main:app --reload
 ```
 The console should show the following output if all packages are installed and the server started:
 
@@ -51,7 +51,7 @@ The console should show the following output if all packages are installed and t
 - Styled
 - Chrome, Firefox, or any compatible browser
 
-*You may need to enable legacy-peer-deps before installing node.js packages. Do so by running ```npm config set legacy-peer-deps true``` then running ```npm i```.*
+*You may need to enable legacy-peer-deps before installing node.js modules. Do so by running ```npm config set legacy-peer-deps true``` then running ```npm i```.*
 
 In PowerShell, navigate to the project repository folder. 
 
